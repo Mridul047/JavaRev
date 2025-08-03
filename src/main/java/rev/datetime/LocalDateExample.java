@@ -1,13 +1,13 @@
 package rev.datetime;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 
 public class LocalDateExample {
   public static void main(String[] args) {
-    //Logger log = LoggerFactory.getLogger(LocalDateExample.class);
+    // Logger log = LoggerFactory.getLogger(LocalDateExample.class);
 
     LocalDate today = LocalDate.now(); // Current date
     LocalDate birthDate = LocalDate.of(1990, 5, 15); // Specific date

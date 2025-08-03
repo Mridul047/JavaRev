@@ -1,7 +1,5 @@
 package rev.threading;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
@@ -9,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PracticeExecutors {
@@ -37,7 +36,7 @@ public class PracticeExecutors {
     }
   }
 
-  public void readFile(String filePath){
+  public void readFile(String filePath) {
     Path path = Paths.get("D:\\NewsGroupService");
     path.toFile().isDirectory();
   }

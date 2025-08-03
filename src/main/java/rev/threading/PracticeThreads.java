@@ -3,14 +3,13 @@ package rev.threading;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import rev.threading.model.Products;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import lombok.extern.slf4j.Slf4j;
+import rev.threading.model.Products;
 
 @Slf4j
 public class PracticeThreads {
@@ -28,7 +27,7 @@ public class PracticeThreads {
       var th1 = performTaskOnVirtualThread(callGetApi());
       var th2 = performTaskOnPlatformThread(callGetApi());
       // Current Thread should wait for th1 to finish
-      //th1.join();
+      // th1.join();
       th2.join();
 
     } catch (InterruptedException e) {
