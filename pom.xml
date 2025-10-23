@@ -6,7 +6,7 @@
 
     <groupId>com.mycodethesaurus</groupId>
     <artifactId>JavaRev</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -23,6 +23,7 @@
         <jackson-databind.version>2.15.2</jackson-databind.version>
         <jackson-annotations.version>2.15.2</jackson-annotations.version>
         <lombok.version>1.18.38</lombok.version>
+        <jspecify.version>1.0.0</jspecify.version>
         <!-- LIBRARY DEPS END -->
 
         <!-- PLUGIN DEPS START -->
@@ -81,6 +82,22 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.javamoney/moneta -->
+        <dependency>
+            <groupId>org.javamoney</groupId>
+            <artifactId>moneta</artifactId>
+            <version>1.4.5</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jspecify/jspecify -->
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+            <version>${jspecify.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -98,9 +115,10 @@
                             <version>${lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+<!--                    <compilerArgs>&#45;&#45;enable-preview-->
+<!--                    </compilerArgs>-->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
 

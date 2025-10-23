@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class PracticeExecutors {
+public class ExecutorsDriver {
 
   public static void main(String[] args) {
     ScheduledExecutorService ex_run = Executors.newScheduledThreadPool(1);

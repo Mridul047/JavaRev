@@ -1,0 +1,4 @@
+Hello,
+This is a txt file.
+
+This file can be read by java code.
