@@ -27,7 +27,7 @@
         <!-- LIBRARY DEPS END -->
 
         <!-- PLUGIN DEPS START -->
-        <fmt-maven-plugin.version>2.25</fmt-maven-plugin.version>
+        <fmt-maven-plugin.version>2.29</fmt-maven-plugin.version>
         <!-- PLUGIN DEPS END -->
     </properties>
 
@@ -115,8 +115,8 @@
                             <version>${lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
-<!--                    <compilerArgs>&#45;&#45;enable-preview-->
-<!--                    </compilerArgs>-->
+                    <compilerArgs>--enable-preview
+                    </compilerArgs>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                 </configuration>
