@@ -77,7 +77,5 @@ public class BinaryTree {
     System.out.println(root.getValue());
   }
 
-  public static void postOrderTraversalV2(TreeNode root){
-
-  }
+  public static void postOrderTraversalV2(TreeNode root) {}
 }

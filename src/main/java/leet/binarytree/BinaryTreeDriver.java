@@ -1,6 +1,5 @@
 package leet.binarytree;
 
-
 import static leet.binarytree.BinaryTree.inOrderTraversal;
 import static leet.binarytree.BinaryTree.inOrderTraversalV2;
 import static leet.binarytree.BinaryTree.postOrderTraversal;
@@ -40,16 +39,15 @@ public class BinaryTreeDriver {
     System.out.println(getMaxHeight(root));
   }
 
-  public static int getMaxHeight(TreeNode root){
-    if(root == null) return 0;
+  public static int getMaxHeight(TreeNode root) {
+    if (root == null) return 0;
     int maxL = getMaxHeight(root.getLeftNode());
     int maxR = getMaxHeight(root.getRightNode());
-    return 1 + Math.max(maxL,maxR);
+    return 1 + Math.max(maxL, maxR);
   }
 
-  public static int getMaxValue(TreeNode root){
+  public static int getMaxValue(TreeNode root) {
 
     return 1;
   }
-
 }
