@@ -1,5 +1,8 @@
 package leet.binarytree;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class BinaryTree {
 
   private TreeNode root;
@@ -16,33 +19,65 @@ public class BinaryTree {
     root.addNodeToRight(node);
   }
 
+  public TreeNode getRootNode() {
+    return root;
+  }
+
   private void traverseLeftOfNode(TreeNode root) {}
-}
 
-class TreeNode {
-  private Integer value;
-  private TreeNode left;
-  private TreeNode right;
-
-  public TreeNode() {}
-
-  public TreeNode(Integer value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  public static void preOrderTraversal(TreeNode root) {
+    if (root == null) return;
+    System.out.println(root.getValue() + " ");
+    preOrderTraversal(root.getLeftNode());
+    preOrderTraversal(root.getRightNode());
   }
 
-  public TreeNode(Integer value, TreeNode left, TreeNode right) {
-    this.value = value;
-    this.left = left;
-    this.right = right;
+  public static void preOrderTraversalV2(TreeNode root) {
+    if (root == null) return;
+
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    stack.push(root);
+
+    while (!stack.isEmpty()) {
+      TreeNode tempNode = stack.pop();
+      System.out.println(tempNode.getValue());
+      if (tempNode.getRightNode() != null) stack.push(tempNode.getRightNode());
+      if (tempNode.getLeftNode() != null) stack.push(tempNode.getLeftNode());
+    }
   }
 
-  public void addNodeToLeft(TreeNode inputNode) {
-    left = inputNode;
+  public static void inOrderTraversal(TreeNode root) {
+    if (root == null) return;
+    inOrderTraversal(root.getLeftNode());
+    System.out.println(root.getValue());
+    inOrderTraversal(root.getRightNode());
   }
 
-  public void addNodeToRight(TreeNode inputNode) {
-    right = inputNode;
+  public static void inOrderTraversalV2(TreeNode root) {
+    if (root == null) return;
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    TreeNode tempNode = root;
+
+    while (!stack.isEmpty() || tempNode != null) {
+      if (tempNode != null) {
+        stack.push(tempNode);
+        tempNode = tempNode.getLeftNode();
+      } else {
+        tempNode = stack.pop();
+        System.out.println(tempNode.getValue());
+        tempNode = tempNode.getRightNode();
+      }
+    }
+  }
+
+  public static void postOrderTraversal(TreeNode root) {
+    if (root == null) return;
+    postOrderTraversal(root.getLeftNode());
+    postOrderTraversal(root.getRightNode());
+    System.out.println(root.getValue());
+  }
+
+  public static void postOrderTraversalV2(TreeNode root){
+
   }
 }
