@@ -1,8 +1,8 @@
 package leet_code.strings;
 
-// LC_205: https://leetcode.com/problems/isomorphic-strings/description/
-
 import lombok.extern.slf4j.Slf4j;
+
+// LC_205: https://leetcode.com/problems/isomorphic-strings/description/
 
 @Slf4j
 public class LC_205_Isomorphic_Strings {
